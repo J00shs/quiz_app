@@ -7,7 +7,7 @@ void main(){
       home: Scaffold(
         body: Container(
           ////////////////////////////
-          //Create Backgrond
+          //Create Background
           decoration: const BoxDecoration(
             
             gradient: LinearGradient(
