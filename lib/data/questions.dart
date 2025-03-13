@@ -6,4 +6,5 @@ const questions = [
   QuizQuestion("Which company owns Rolls-Royce?", ["BMW", "Mercedes", "VW"]),
   QuizQuestion("Which company owns Lamboghini?", ["Audi", "Porsche", "VW", "BMW"]),
   QuizQuestion("The C63 belongs to which company?", ["Mercedes","BMW","Honda", "Audi"]),
+  QuizQuestion("Who invented the first car?", ["Ford", "Mercedes", "Honda", "Chevy"])
 ];
