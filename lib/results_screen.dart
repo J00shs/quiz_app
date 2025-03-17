@@ -43,7 +43,14 @@ Widget build(context) {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('You answered $numCorrectQuestions out of $numTotalQuestions questions correctly'),
+            Text(
+              'You answered $numCorrectQuestions out of $numTotalQuestions questions correctly',
+              style: TextStyle(
+                color:Colors.white,
+                fontSize: 18,
+              ),
+              textAlign: TextAlign.center,
+            ),
             const SizedBox(
               height: 30,
             ),
@@ -51,9 +58,24 @@ Widget build(context) {
             const SizedBox(
               height: 30,
             ),
-            TextButton(
-              onPressed: () {},
-              child: const Text('Restart Quiz'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+            'assets/images/refresh--v2.png',
+            width: 25,
+            color: Color.fromARGB(175, 255, 255, 255),
+          ),
+                TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'Restart Quiz',
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                  ),
+              ),
+              ],
             )
           ],
         ),
@@ -62,5 +84,4 @@ Widget build(context) {
   }
 }
 
-//Styling, working restart quiz button, inplement rest of code from slides. 
 
