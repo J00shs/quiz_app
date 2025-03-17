@@ -13,7 +13,15 @@ class QuestionsSummary extends StatelessWidget{
         (data){
           return Row(
             children:[
-              Text(((data['question_index'] as int) +1).toString()),
+              CircleAvatar(
+                backgroundColor: data['user_answer']== data['correct_answer'] ? Color.fromARGB(500,120, 189, 248):Color.fromARGB(450,228, 120, 247),
+                child: Text(
+                  ((data['question_index'] as int) +1).toString(),
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+                ),
+              ),
               Column(
                 children:[
                   Text(data['question'] as String),
