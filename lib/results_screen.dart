@@ -23,24 +23,36 @@ class ResultsScreen extends StatelessWidget{
     return summary;
   }
 
+  
+
   @override
-  Widget build(context)
-  {
+Widget build(context) {
+  final summaryData = getSummaryData(); 
+
+  final numTotalQuestions = questions.length;
+  final numCorrectQuestions = summaryData.where(
+    (data){
+      return data['correct_answer'] == data['user_answer'];
+    }
+  ).length;
+
     return SizedBox(
       width: double.infinity,
       child: Container(
         margin: const EdgeInsets.all(40),
-        child:  Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children:  [
-            const Text('You answered X out of Y questions Correctly'),
-            const SizedBox(height:30,),
-            QuestionsSummary(summaryData: getSummaryData()),
-            const SizedBox(height:30,),
+          children: [
+            Text('You answered $numCorrectQuestions out of $numTotalQuestions questions correctly'),
+            const SizedBox(
+              height: 30,
+            ),
+            QuestionsSummary(summaryData: summaryData),
+            const SizedBox(
+              height: 30,
+            ),
             TextButton(
-              onPressed: (){
-                
-              },
+              onPressed: () {},
               child: const Text('Restart Quiz'),
             )
           ],
@@ -49,3 +61,6 @@ class ResultsScreen extends StatelessWidget{
     );
   }
 }
+
+//Styling, working restart quiz button, inplement rest of code from slides. 
+
