@@ -54,8 +54,9 @@ class _QuizState extends State<Quiz> {
               end: Alignment.bottomRight,
               colors: [
                 Color.fromARGB(255, 78, 13, 151),
-                Colors.blue,
+                // Colors.blue,
                 Color.fromARGB(255, 107, 15, 168),
+                
               ],
             ),
           ),
@@ -64,4 +65,5 @@ class _QuizState extends State<Quiz> {
       ),
     );
   }
+
 }
