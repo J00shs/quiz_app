@@ -3,8 +3,10 @@ import 'package:quiz_app/data/questions.dart';
 import 'package:quiz_app/questions_summary.dart';
 
 class ResultsScreen extends StatelessWidget{
-  const ResultsScreen({super.key, required this.chooseAnswers});
+  final VoidCallback resetQuiz;
+  const ResultsScreen({super.key, required this.chooseAnswers, required this.resetQuiz});
   final List<String> chooseAnswers;
+
 
   List<Map<String, Object>> getSummaryData() {
     final List<Map<String, Object>> summary = [];
@@ -67,7 +69,7 @@ Widget build(context) {
             color: Color.fromARGB(175, 255, 255, 255),
           ),
                 TextButton(
-                onPressed: () {},
+                onPressed: resetQuiz,
                 child: const Text(
                   'Restart Quiz',
                   style: TextStyle(
@@ -82,6 +84,7 @@ Widget build(context) {
       ),
     );
   }
+
 }
 
 
