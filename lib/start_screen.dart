@@ -1,45 +1,53 @@
 import 'package:flutter/material.dart';
 
 class StartScreen extends StatelessWidget {
-  //Make Constructor
-  const StartScreen({super.key});
+  const StartScreen(this.startQuiz, {super.key});
+
+  final void Function() startQuiz;
+
   @override
   Widget build(BuildContext context) {
     return Center(
-      //The column allows you to have multiple widgets
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Image.asset('assets/images/quiz-logo.png',
-          width: 300,
+          Image.asset(
+            'assets/images/quiz-logo.png',
+            width: 300,
+            color: Color.fromARGB(175, 255, 255, 255),
           ),
           SizedBox(
             height: 80,
           ),
           Text(
-            "Learn Flutter The Fun Way",
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
+            "Learn Flutter the Fun Way",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
             ),
           ),
           const SizedBox(
             height: 30,
           ),
           OutlinedButton.icon(
-            icon: const Icon(Icons.arrow_circle_right_outlined, size: 40), 
-            onPressed: (){}, 
+            icon: const Icon(Icons.arrow_circle_right_outlined, size: 40),
+            onPressed: startQuiz,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               padding: EdgeInsets.symmetric(
-                vertical: 10,
-                horizontal: 50,
+                vertical: 20,
+                horizontal: 40,
               ),
             ),
-          label: Text("Start Quiz"))
+            label: Text(
+              "Start Quiz",
+              style: TextStyle(
+                fontSize: 24,
+              ),
+            ),
+          ),
         ],
       ),
-      );
+    );
   }
-
 }
